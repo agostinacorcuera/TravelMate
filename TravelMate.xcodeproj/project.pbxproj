@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		184C734A2DB2D3A800BBCFB3 /* TravelMateUI in Frameworks */ = {isa = PBXBuildFile; productRef = 184C73492DB2D3A800BBCFB3 /* TravelMateUI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		186654DF2DB0173500307089 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184C734A2DB2D3A800BBCFB3 /* TravelMateUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = TravelMate;
 			packageProductDependencies = (
+				184C73492DB2D3A800BBCFB3 /* TravelMateUI */,
 			);
 			productName = TravelMate;
 			productReference = 186654C92DB0173400307089 /* TravelMate.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 186654C02DB0173400307089;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				184C73482DB2D3A800BBCFB3 /* XCRemoteSwiftPackageReference "TravelMateUI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 186654CA2DB0173400307089 /* Products */;
 			projectDirPath = "";
@@ -552,6 +561,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		184C73482DB2D3A800BBCFB3 /* XCRemoteSwiftPackageReference "TravelMateUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/agostinacorcuera/TravelMateUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		184C73492DB2D3A800BBCFB3 /* TravelMateUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 184C73482DB2D3A800BBCFB3 /* XCRemoteSwiftPackageReference "TravelMateUI" */;
+			productName = TravelMateUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 186654C12DB0173400307089 /* Project object */;
 }

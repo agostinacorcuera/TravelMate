@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  TravelMate
+
+  Created by Agostina Corcuera on 18/04/2025.
+  
+*/
+
+//HOME
+"header.app.title" = "Travel Mate";
+"home.empty_state.title" = "Aquí aparecerán tus viajes";
+"home.new.trip.button.title" = "Nuevo viaje"
