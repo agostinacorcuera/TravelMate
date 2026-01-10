@@ -9,12 +9,16 @@ import SwiftUI
 
 @main
 struct TravelMateApp: App {
-    let persistenceController = PersistenceController.shared
+    // Creamos la única fuente de verdad para la navegación aquí
+    @StateObject private var router = AppRouter()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            AppNavigation(router: router) {
+                HomeView()
+            }
+            // Inyectamos el router para que @EnvironmentObject lo encuentre
+            .environmentObject(router)
         }
     }
 }
