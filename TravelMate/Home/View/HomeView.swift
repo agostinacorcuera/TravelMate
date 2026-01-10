@@ -6,31 +6,57 @@
 //
 
 import SwiftUI
-import TravelMateUI
+import Foundation
 
 struct HomeView: View {
+    @EnvironmentObject var router: AppRouter
     @ObservedObject var viewModel = HomeViewModel()
 
     var body: some View {
         VStack(spacing: 24) {
             Spacer()
 
-            Image("ic_travel_mate")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 120, height: 120)
+            switch viewModel.state {
+            case .loading:
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .PrimaryButton))
 
-            Text(LocalizedStringKey("home.empty_state.title"))
-                .font(.title2)
-                .multilineTextAlignment(.center)
-                .foregroundColor(.TextPrimary)
+            case .empty:
+                VStack(spacing: 16) {
+                    Image("ic_travel_mate")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 400, height: 400)
+
+                    Text(LocalizedStringKey("home.emptystate.title"))
+                        .font(.title2)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.TextPrimary)
+                }
+
+            case .success(let trips):
+                ScrollView {
+                    VStack(spacing: 16) {
+                        ForEach(trips, id: \.self) { trip in
+                            TravelCardView(trip: trip)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+
+            case .error(let message):
+                Text(message)
+                    .foregroundColor(.red)
+                    .multilineTextAlignment(.center)
+                    .padding()
+            }
 
             Spacer()
 
             PrimaryButton(title: NSLocalizedString("home.new.trip.button.title", comment: "")) {
-                //viewModel.didTapNewTrip()
+                router.navigate(to: .newTrip)
             }
-            .padding(.horizontal)
+            .padding(24)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.Background)
