@@ -13,7 +13,12 @@
 
 //NEW TRIP
 "header.newtrip.title" = "Nuevo viaje";
-"newtrip.placeholder.title" = "Nombre del viaje";
+"newtrip.textfield.title" = "Escribe el nombre del viaje";
+"newtrip.placeholder.text" = "Escribe aquí";
 "newtrip.start.date" = "Inicio del viaje";
 "newtrip.end.date" = "Final del viaje";
-"newtrip.button.save" = "Guardar"; 
+
+//GENERIC TEXTS
+"button.save" = "Guardar";
+"button.close" = "Cerrar";
+"icons.select" = "Selecciona un Icono";
